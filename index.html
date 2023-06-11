@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "13px",
+              sm: "15px",
+              lg: "15px",
+              xl: "15px",
+            },
+            screens: {
+              sm: "600px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1150px",
+              "2xl": "1150px",
+            },
+          },
+          extend: {
+            fontFamily: {
+              inter: ['"Inter", sans-serif'],
+            },
+            colors: {
+              textColor: "#7F8FA4",
+              themeColor: "#5B4DF2",
+              themeColor2: "#00DE56",
+              borderColor: "#E1E8EE",
+              dark: "#334150",
+              light: "#F5F6F7",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @layer base {
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        body {
+          font-family: "Poppins", sans-serif;
+        }
+      }
+
+      /* Tab content - closed */
+      .tab-content {
+        max-height: 0;
+        -webkit-transition: max-height 0.35s;
+        -o-transition: max-height 0.35s;
+        transition: max-height 0.35s;
+      }
+      /* :checked - resize to full height */
+      .tab input:checked ~ .tab-content {
+        max-height: 100vh;
+      }
+      /* Label formatting when open */
+      .tab input:checked + label {
+        /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
+        font-size: 1.25rem; /*.text-xl*/
+        /* padding: 1.25rem;  */
+        padding: 45px;
+        border-left-width: 2px; /*.border-l-2*/
+        border-color: #6574cd; /*.border-indigo*/
+        background-color: #fff; /*.bg-gray-100 */
+        color: #30404d; /*.text-indigo*/
+      }
+
+      @media screen and (max-width: 768px) {
+        .tab input:checked + label {
+          padding: 20px;
+          font-size: 1rem;
+        }
+      }
+
+      /* Icon */
+      .tab label::after {
+        float: right;
+        right: 0;
+        top: 0;
+        display: block;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5;
+        font-size: 1.25rem;
+        text-align: center;
+        -webkit-transition: all 0.35s;
+        -o-transition: all 0.35s;
+        transition: all 0.35s;
+        color: #fff;
+      }
+      /* Icon formatting - closed */
+      .tab input[type="checkbox"] + label::after {
+        content: "+";
+        font-weight: bold; /*.font-bold*/
+        border-radius: 9999px; /*.rounded-full */
+        background-color: #000;
+      }
+      .tab input[type="radio"] + label::after {
+        content: "-";
+        font-weight: bold; /*.font-bold*/
+        border-radius: 9999px; /*.rounded-full */
+        background-color: #000;
+      }
+      /* Icon formatting - open */
+      .tab input[type="checkbox"]:checked + label::after {
+        transform: rotate(180deg);
+        content: "-";
+        background-color: #000; /*.bg-indigo*/
+        color: #fff; /*.text-grey-lightest*/
+      }
+      .tab input[type="radio"]:checked + label::after {
+        transform: rotateX(180deg);
+        background-color: #000; /*.bg-indigo*/
+        color: #fff; /*.text-grey-lightest*/
+      }
+    </style>
+
+    <title>Leverage</title>
+  </head>
+
+  <body>
+    <!--======== Header Area Start =========-->
+    <header></header>
+    <!--======== Header Area End =========-->
+
+    <!--======== Main Area Start =========-->
+    <main>
+      <!-- ======== Hero section Start ========= -->
+
+      <section
+        class="hero_section bg-[url('./assets/img/bg/hero_bg.png')] w-full pb-[40px] lg:pd-[0] h-[auto] lg:h-[853px] bg-cover bg-no-repeat bg-blend-multiply"
+      >
+        <div class="container">
+          <!-- --top-header--  -->
+          <div class="flex pt-[25px] lg:pt-[40px] items-center justify-between">
+            <a href=""><img src="assets/img/logos/logo.png" alt="" /></a>
+            <button
+              class="py-[10px] px-[10px] lg:py-[18px] lg:px-[25px] text-[12px] md:text-[14px] font-[600] text-[#293742] bg-[#fff] flex-shrink-0 rounded-[8px] transition hover:bg-[#293742] hover:text-[#fff]"
+            >
+              Notify me when launched
+            </button>
+          </div>
+          <!-- hero_content  -->
+          <div class="pt-[80px] md:pt-[100px] lg:pt-[156px] text-center">
+            <h1
+              class="text-[2rem] md:text-[2.3rem] lg:text-[3rem] font-[700] text-[#CED9E0] leading-[1.5] lg:leading-[110%]"
+            >
+              The global community of high- <br class="hidden md:block" />
+              growth proptech founders & CEOs
+            </h1>
+            <p
+              class="text-[16px] lg:text-[18px] max-w-[770px] mx-auto font-[400] text-[#CED9E0] my-[30px] text-center leading-[1.5]"
+            >
+              <span class="text-[16px] lg:text-[18px] font-[700] text-[#CED9E0]"
+                >Leverage</span
+              >
+              is an invite-only community of founders and CEOs from the proptech
+              industry that offers peer-support to grow and thrive your proptech
+              business.
+            </p>
+            <!-- --notify_box---  -->
+
+            <div
+              class="max-w-[484px] mx-auto flex justify-between py-[1px] px-[1px] bg-[#fff] rounded-[8px] overflow-hidden"
+            >
+              <input
+                class="w-[50%] pl-[20px] focus:outline-none placeholder:text-[12px] md:placeholder:text-[14px] lg:placeholder:text-[16px]"
+                type="email"
+                placeholder="you@domain.com"
+              />
+              <button
+                class="py-[10px] px-[10px] lg:py-[18px] lg:px-[25px] text-[12px] md:text-[14px] font-[600] text-[#fff] bg-[#30404D] flex-shrink-0 rounded-[8px] transition hover:bg-[#293745]"
+              >
+                Notify When Launched
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======== Hero section End ========= -->
+
+      <!-- ======== What is Leverage section Start ========= -->
+
+      <section>
+        <div class="container">
+          <!-- ---content--  -->
+          <div
+            class="max-w-[947px] mx-auto mt-[40px] lg:mt-[-230px] rounded-[16px] shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-[#fff] overflow-hidden"
+          >
+            <!-- img_box -->
+            <div
+              class="what_img h-[297px] relative rounded-[10px] overflow-hidden"
+            >
+              <img
+                src="assets/img/bg/what_bg-2.png"
+                class="h-full w-full object-cover"
+                alt=""
+              />
+            </div>
+            <!-- ---what-text ---  -->
+
+            <div
+              class="p-[32px] lg:pt-[32px] lg:pl-[38px] lg:pr-[45px] lg:pb-[60px]"
+            >
+              <h6 class="text-[16px] font-[400] text-[#394B59]">
+                First things first
+              </h6>
+              <h2
+                class="text-[18px] md:text-[20px] lg:text-[24px] font-[700] text-[#394B59] mt-[8px] mb-[11px]"
+              >
+                What is Leverage?
+              </h2>
+              <p
+                class="text-[14px] md:text-[16px] font-[400] text-[#394B59] mb-[10px] md:mb-[16px]"
+              >
+                LeverageVIP is an invite-only community of founders and CEOs
+                from the proptech industry that offers peer-support to grow and
+                thrive your proptech business.
+              </p>
+              <p
+                class="text-[14px] md:text-[16px] font-[400] text-[#394B59] mb-[10px] md:mb-[16px]"
+              >
+                In business, the power of mentors are overrated and the power of
+                peers are underrated. In Leverage, each member commits to bring
+                their superpowers to add meaningful value to other members.
+                Running your business is a lonely job and having a safe space to
+                openly share your challenges and get support is extremely
+                valuable.
+              </p>
+              <p class="text-[14px] md:text-[16px] font-[400] text-[#394B59]">
+                The best way to overcome the challenges is to learn from the
+                wins and mistakes of others, and to surround yourself with
+                founders who’ve been there, done that.
+              </p>
+              <p class="text-[14px] md:text-[16px] font-[400] text-[#394B59]">
+                Being part of leverage.VIP significantly increases the
+                probability of your business growth. Access to small,
+                confidential peer networks that can play a crucial role in an
+                executive’s professional success. The greatest benefit these
+                groups offer are peer advisory forums where members can candidly
+                discuss ideas, strategies, and challenges,
+              </p>
+              <p class="text-[14px] md:text-[16px] text-[#394B59]">
+                Leverage helps foster long-term relationships. Meeting two new
+                people and agreeing to meet each quarter is far more rewarding
+                than meeting 10 new people at a conference and never speaking
+                again.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========What is Leverage section End ========= -->
+
+      <!-- ========Brand icon section start ========= -->
+
+      <section
+        class="pt-[60px] pb-[60px] md:pt-[120px] md:pb-[80px] lg:pt-[160px] lg:pb-[120px]"
+      >
+        <div class="container">
+          <div
+            class="flex flex-wrap gap-4 items-center justify-between bg-[#fff]"
+          >
+            <div class="brand_icon">
+              <img src="assets/img/icons/Brand_1.png" alt="" />
+            </div>
+            <div class="brand_icon">
+              <img src="assets/img/icons/Brand_2.png" alt="" />
+            </div>
+            <div class="brand_icon">
+              <img src="assets/img/icons/Brand_3.png" alt="" />
+            </div>
+            <div class="brand_icon">
+              <img src="assets/img/icons/Brand_4.png" alt="" />
+            </div>
+            <div class="brand_icon">
+              <img src="assets/img/icons/Brand_5.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========Brand icon section End ========= -->
+
+      <!-- ========powerful section start =========  -->
+
+      <section class="mb-[60px] md:mb-[100px] lg:mb-[200px]">
+        <div class="container">
+          <h2
+            class="text-[24px] md:text-[38px] lg:text-[48px] mb-[20px] md:mb-[30px] lg:mb-[50px] text-center font-[400] text-[#394B59]"
+          >
+            Leverage is <span class="font-[700]">powerful, fast and fun</span>
+          </h2>
+          <!-- ---powerful card wrapper--  -->
+          <div
+            class="px-[25px] grid grid-cols-12 gap-[25px] md:gap-[35px] lg:gap-[89px]"
+          >
+            <!-- ---single-card--  -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+              <!-- card_thum  -->
+              <div class="h-[313px]">
+                <img
+                  src="assets/img/thumbs/powerful_card-1.png"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+
+              <!-- card_title -->
+              <h6
+                class="text-[16px] md:text-[18px] lg:text-[22px] leading-[30.8px] mt-[15px] mb-[12px] lg:mt-[30px] lg:mb-[16px] font-[700] text-[#5C7080]"
+              >
+                Monthly Core group sessions
+              </h6>
+              <!-- card_body -->
+              <div class="text-[14px] lg:text-[16px] font-[400] text-[#A7B6C2]">
+                It is a long established fact that a reader will be.It is a long
+                esd fact that a reader will be.
+              </div>
+            </div>
+            <!-- ---single-card--  -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+              <!-- card_thum  -->
+              <div class="h-[313px]">
+                <img
+                  src="assets/img/thumbs/powerful_card-1.png"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+
+              <!-- card_title -->
+              <h6
+                class="text-[16px] md:text-[18px] lg:text-[22px] leading-[30.8px] mt-[15px] mb-[12px] lg:mt-[30px] lg:mb-[16px] font-[700] text-[#5C7080]"
+              >
+                In-person community
+              </h6>
+              <!-- card_body -->
+              <div class="text-[14px] lg:text-[16px] font-[400] text-[#A7B6C2]">
+                It is a long established fact that a reader will be.It is a long
+                esd fact that a reader will be.
+              </div>
+            </div>
+
+            <!-- ---single-card--  -->
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+              <!-- card_thum  -->
+              <div class="h-[313px]">
+                <img
+                  src="assets/img/thumbs/powerful_card-1.png"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+
+              <!-- card_title -->
+              <h6
+                class="text-[16px] md:text-[18px] lg:text-[22px] leading-[30.8px] mt-[15px] mb-[12px] lg:mt-[30px] lg:mb-[16px] font-[700] text-[#5C7080]"
+              >
+                Business growth series and education
+              </h6>
+              <!-- card_body -->
+              <div class="text-[14px] lg:text-[16px] font-[400] text-[#A7B6C2]">
+                It is a long established fact that a reader will be.It is a long
+                esd fact that a reader will be.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========powerful section End =========  -->
+
+      <!-- ======== Member Stories section start =========  -->
+
+      <section class="bg-[#30404D]">
+        <div class="container">
+          <!-- inner_content -->
+          <div
+            class="pt-[50px] pb-[50px] md:pt-[60px] md:pb-[100px] lg:pt-[100px] lg:pb-[180px] bg-[#fff]"
+          >
+            <h6
+              class="text-[16px] mb-[10px] lg:mb-[18px] font-[700] text-[#394B59] text-center"
+            >
+              Member Stories
+            </h6>
+            <h2
+              class="text-[24px] md:text-[38px] lg:text-[48px] mb-[20px] md:mb-[40px] lg:mb-[90px] text-center font-[400] text-[#394B59]"
+            >
+              Words from our <span class="font-[700]">early adopters</span>
+            </h2>
+
+            <!-- --- Member Stories card wrapper--  -->
+            <div
+              class="grid grid-cols-12 gap-[18px] md:gap-[22px] lg:gap-[28px]"
+            >
+              <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <!-- ---single-card--  -->
+                <div
+                  class="py-[31px] px-[24px] rounded-[10px] hover:shadow-[0_18px_53px_7px_rgba(0,0,0,0.07)] transition delay-300"
+                >
+                  <div class="flex items-center gap-[16px]">
+                    <!-- card_thum  -->
+                    <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+                      <img
+                        src="assets/img/icons/image icon.png"
+                        class="w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ratting">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <span class="text-[16px] font-[700] text-[#30404D]"
+                        >4.8</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- card_title -->
+                  <h6
+                    class="text-[16px] lg:text-[20px] leading-[30px] mt-[14px] mb-[10px] md:mt-[22px] md:mb-[12px] lg:mt-[30px] lg:mb-[14px] font-[700] text-[#30404D]"
+                  >
+                    Jenny Wilson
+                  </h6>
+                  <!-- card_body -->
+                  <div
+                    class="text-[14px] lg:text-[16px] font-[400] text-[#30404D]"
+                  >
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <!-- ---single-card--  -->
+                <div
+                  class="py-[31px] px-[24px] rounded-[10px] hover:shadow-[0_18px_53px_7px_rgba(0,0,0,0.07)] transition delay-300"
+                >
+                  <div class="flex items-center gap-[16px]">
+                    <!-- card_thum  -->
+                    <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+                      <img
+                        src="assets/img/icons/image icon.png"
+                        class="w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ratting">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <span class="text-[16px] font-[700] text-[#30404D]"
+                        >5</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- card_title -->
+                  <h6
+                    class="text-[16px] lg:text-[20px] leading-[30px] mt-[14px] mb-[10px] md:mt-[22px] md:mb-[12px] lg:mt-[30px] lg:mb-[14px] font-[700] text-[#30404D]"
+                  >
+                    Jenny Wilson
+                  </h6>
+                  <!-- card_body -->
+                  <div
+                    class="text-[14px] lg:text-[16px] font-[400] text-[#30404D]"
+                  >
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <!-- ---single-card--  -->
+                <div
+                  class="py-[31px] px-[24px] rounded-[10px] hover:shadow-[0_18px_53px_7px_rgba(0,0,0,0.07)] transition delay-300"
+                >
+                  <div class="flex items-center gap-[16px]">
+                    <!-- card_thum  -->
+                    <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+                      <img
+                        src="assets/img/icons/image icon.png"
+                        class="w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ratting">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <span class="text-[16px] font-[700] text-[#30404D]"
+                        >5</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- card_title -->
+                  <h6
+                    class="text-[16px] lg:text-[20px] leading-[30px] mt-[14px] mb-[10px] md:mt-[22px] md:mb-[12px] lg:mt-[30px] lg:mb-[14px] font-[700] text-[#30404D]"
+                  >
+                    Jenny Wilson
+                  </h6>
+                  <!-- card_body -->
+                  <div
+                    class="text-[14px] lg:text-[16px] font-[400] text-[#30404D]"
+                  >
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== Member Stories section End =========  -->
+
+      <!-- ======== rocket boosters section start ========= -->
+
+      <section class="mb-[40px] md:mb-[60px] lg:mb-[120px]">
+        <div class="container">
+          <h6
+            class="text-[16px] lg:text-[18px] mb-[10px] lg:mb-[18px] font-[400] text-[#394B59] text-center"
+          >
+            Less talking, more walking
+          </h6>
+          <h2
+            class="text-[24px] md:text-[38px] lg:text-[48px] mb-[20px] md:mb-[35px] lg:mb-[65px] leading-[1.5] lg:leading-[52.8px] text-center font-[400] text-[#394B59]"
+          >
+            <span class="font-[700]"
+              >Get rocket boosters for your <br class="hidden lg:block" />
+              proptech business
+            </span>
+          </h2>
+          <!-- rocket boosters card wrapper  -->
+          <div class="flex flex-wrap gap-[25px] items-center justify-center">
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[25px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                01
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Connections
+              </h5>
+              <p class="text-[16px] text-[#A7B6C2] text-center font-[400]">
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[25px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                02
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Collaborations
+              </h5>
+              <p class="text-[16px] text-[#A7B6C2] text-center font-[400]">
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[25px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                03
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Mentorships
+              </h5>
+              <p class="text-[16px] text-[#A7B6C2] text-center font-[400]">
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[25px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                04
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Investments
+              </h5>
+              <p class="text-[16px] text-[#A7B6C2] text-center font-[400]">
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[25px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                02
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Founder intros
+              </h5>
+              <p class="text-[16px] text-[#A7B6C2] text-center font-[400]">
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[25px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                03
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Masterminds
+              </h5>
+              <p class="text-[16px] text-[#A7B6C2] text-center font-[400]">
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+            <!-- single card  -->
+            <div
+              class="max-w-[260px] px-[20px] py-[55px] rounded-[10px] shadow-[0_24px_74px_rgba(0,0,0,0.15)]"
+            >
+              <div
+                class="w-[50px] h-[50px] bg-[#30404D] mx-auto text-[#fff] text-[20px] font-[700] rounded-full flex items-center justify-center"
+              >
+                04
+              </div>
+              <h5
+                class="text-[20px] lg:text-[24px] mt-[20px] mb-[8px] text-[#30404D] text-center font-[700]"
+              >
+                Help from Experts
+              </h5>
+              <p
+                class="text-[16px] px-[5px] text-[#A7B6C2] text-center font-[400]"
+              >
+                It is a long established fact that a reader will be.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======== rocket boosters section End ========= -->
+
+      <!-- ======== perfect place-1 section start ========= -->
+
+      <section>
+        <div class="container">
+          <h2
+            class="text-[24px] md:text-[28px] lg:text-[36px] mb-[18px] lg:mb-[24px] leading-[1.5] lg:leading-[43.2px] text-center font-[400] text-[#394B59]"
+          >
+            <span class="font-[700]">
+              The perfect place to learn and grow
+            </span>
+          </h2>
+
+          <h6
+            class="text-[16px] lg:text-[18px] mb-[25px] md:mb-[40px] lg:mb-[70px] max-w-[638px] mx-auto font-[400] text-[#394B59] text-center"
+          >
+            Lorem ipsum dolor sit amet consectetur. Suspendisse ipsum placerat
+            id ipsum mauris blandit sit condimentum volutpat. Lorem
+          </h6>
+
+          <!-- ---timeline---  -->
+          <!-- component -->
+          <div class="mx-auto w-full h-full">
+            <div class="relative wrap overflow-hidden h-full">
+              <div
+                class="hidden lg:block border-2-2 absolute left-[50%] border-opacity-20 border-gray-700 h-full border"
+              ></div>
+
+              <!-- first row  -->
+              <div class="mb-[30px] md:mb-[50px] lg:mb-[80px]">
+                <div
+                  class="hidden lg:flex absolute left-[50%] translate-x-[-50%] z-20 flex items-center bg-[#30404D] shadow-xl w-[42px] h-[42px] rounded-full"
+                >
+                  <h5 class="mx-auto font-semibold text-lg text-white">1</h5>
+                </div>
+                <div class="flex flex-wrap">
+                  <!-- left-side  -->
+
+                  <div class="w-full md:w-1/2">
+                    <div class="max-w-[493px]">
+                      <h4
+                        class="text-[20px] lg:text-[24px] leading-[28.8px] mb-[20px] text-[#30404D] font-[700]"
+                      >
+                        Connect and make friends <br class="hidden md:block" />
+                        with other proptech founders
+                      </h4>
+                      <p
+                        class="text-[16px] mb-[16px] text-[#394B59] font-[400]"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Suspendisse
+                        ipsum placerat id ipsum mauris blandit sit condimentum
+                        volutpat. Loremdimentum volutpat. Lorem
+                      </p>
+
+                      <p
+                        class="text-[16px] mb-[16px] text-[#394B59] font-[400]"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Suspendisse
+                        ipsum placerat id ipsum mauris blandit sit condimentum
+                        volutpat. Loremdimentum volutpat. Lorem
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- right-side  -->
+
+                  <div class="w-full md:w-1/2 md:pl-[20px]">
+                    <div class="max-w-[384px] mx-auto md:ml-auto">
+                      <div class="flex flex-wrap gap-[12px]">
+                        <div class="flex gap-[12px]">
+                          <div class="">
+                            <img
+                              src="assets/img/thumbs/perfect_img.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="">
+                            <img
+                              src="assets/img/thumbs/perfect_img.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="flex gap-[12px]">
+                          <div class="">
+                            <img
+                              src="assets/img/thumbs/perfect_img.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="">
+                            <img
+                              src="assets/img/thumbs/perfect_img.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- second row  -->
+              <div class="mb-[30px] md:mb-[50px] lg:mb-[80px]">
+                <div
+                  class="hidden lg:flex absolute left-[50%] translate-x-[-50%] z-20 flex items-center bg-[#30404D] shadow-xl w-[42px] h-[42px] rounded-full"
+                >
+                  <h5 class="mx-auto font-semibold text-lg text-white">2</h5>
+                </div>
+                <div class="flex flex-wrap items-center">
+                  <!-- left-side  -->
+
+                  <div class="w-full md:w-1/2 mb-[20px] md:mb-[0]">
+                    <div class="max-w-[493px] mx-auto md:mx-0">
+                      <img src="assets/img/thumbs/perfect_card.png" alt="" />
+                    </div>
+                  </div>
+
+                  <!-- right-side  -->
+
+                  <div class="w-full md:w-1/2 md:pl-[20px]">
+                    <div class="max-w-[100%] md:max-w-[384px] ml-auto">
+                      <h4
+                        class="text-[20px] lg:text-[24px] leading-[28.8px] mb-[23px] mb-[20px] text-[#30404D] font-[700]"
+                      >
+                        Seek help from the industry’s
+                        <br class="hidden md:block" />
+                        leading entrepreneurs
+                      </h4>
+                      <p
+                        class="text-[16px] mb-[16px] text-[#394B59] font-[400]"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Suspendisse
+                        ipsum placerat id ipsum mauris blandit sit condimentum
+                        volutpat. Loremdimentum volutpat. Lorem
+                      </p>
+
+                      <p
+                        class="text-[16px] mb-[16px] text-[#394B59] font-[400]"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Suspendisse
+                        ipsum placerat id ipsum mauris blandit sit condim
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- third row  -->
+              <div class="">
+                <div
+                  class="hidden lg:flex absolute left-[50%] translate-x-[-50%] z-20 flex items-center bg-[#30404D] shadow-xl w-[42px] h-[42px] rounded-full"
+                >
+                  <h5 class="mx-auto font-semibold text-lg text-white">3</h5>
+                </div>
+                <div class="flex flex-wrap items-center">
+                  <!-- left-side  -->
+
+                  <div class="w-full md:w-1/2">
+                    <div class="max-w-[100%] md:max-w-[493px]">
+                      <h4
+                        class="text-[20px] md:text-[24px] leading-[28.8px] mb-[23px] mb-[20px] text-[#30404D] font-[700]"
+                      >
+                        Discover new products, <br class="hidden md:block" />
+                        collaborate with founders
+                      </h4>
+                      <p
+                        class="text-[16px] mb-[16px] text-[#394B59] font-[400]"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Suspendisse
+                        ipsum placerat id ipsum mauris blandit sit condimentum
+                        volutpat. Loremdimentum volutpat. Lorem
+                      </p>
+
+                      <p
+                        class="text-[16px] mb-[16px] text-[#394B59] font-[400]"
+                      >
+                        Lorem ipsum dolor sit amet consectetur. Suspendisse
+                        ipsum placerat id ipsum mauris blandit sit condimentum
+                        volutpat. Loremdimentum volutpat. Lorem
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- right-side  -->
+
+                  <div class="w-full md:w-1/2 md:pl-[20px] md:mb-[20px]">
+                    <div class="max-w-[384px] mx-auto md:ml-auto">
+                      <img src="assets/img/thumbs/perfect_md_img.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more events as needed -->
+        </div>
+      </section>
+      <!-- ======== perfect place-1 section End ========= -->
+
+      <!-- ======== perfect place-2 section start ========= -->
+
+      <section class="py-[40px] md:py-[60px] lg:py-[100px]">
+        <div class="container">
+          <h2
+            class="text-[24px] lg:text-[36px] mb-[15px] lg:mb-[24px] leading-[1.5] lg:leading-[43.2px] text-center font-[400] text-[#394B59]"
+          >
+            <span class="font-[700]">
+              The perfect place to learn and grow
+            </span>
+          </h2>
+
+          <h6
+            class="text-[16px] lg:text-[18px] mb-[30px] md:mb-[55px] lg:mb-[70px] max-w-[638px] mx-auto font-[400] text-[#394B59] text-center"
+          >
+            Lorem ipsum dolor sit amet consectetur. Suspendisse ipsum placerat
+            id ipsum mauris blandit sit condimentum volutpat. Lorem
+          </h6>
+
+          <!-- --card_wrapper--  -->
+          <div class="flex flex-wrap gap-[25px] items-center justify-center">
+            <!-- single_card  -->
+            <div class="max-w-[355px]">
+              <div class="card_thum">
+                <img src="assets/img/thumbs/perfect_2_img.png" alt="" />
+              </div>
+              <!-- --card_btn--  -->
+              <button
+                class="px-[40px] py-[8px] mt-[20px] mb-[25px] lg:mt-[25px] lg:mb-[35px] text-[16px] font-[400] bg-[#394B59] rounded-[11px] text-[#fff]"
+              >
+                Live sessions
+              </button>
+              <p
+                class="text-[18px] md:text-[20px] lg:text-[24px] text-[#394B59] font-[700]"
+              >
+                Lorem ipsum dolor sit amet me consectetur.
+              </p>
+            </div>
+            <!-- single_card  -->
+            <div class="max-w-[355px]">
+              <div class="card_thum">
+                <img src="assets/img/thumbs/perfect_2_img.png" alt="" />
+              </div>
+              <!-- --card_btn--  -->
+              <button
+                class="px-[40px] py-[8px] mt-[20px] mb-[25px] lg:mt-[25px] lg:mb-[35px] text-[16px] font-[400] bg-[#394B59] rounded-[11px] text-[#fff]"
+              >
+                Workshops
+              </button>
+              <p
+                class="text-[18px] md:text-[20px] lg:text-[24px] text-[#394B59] font-[700]"
+              >
+                Lorem ipsum dolor sit amet me consectetur.
+              </p>
+            </div>
+            <!-- single_card  -->
+            <div class="max-w-[355px]">
+              <div class="card_thum">
+                <img src="assets/img/thumbs/perfect_2_img.png" alt="" />
+              </div>
+              <!-- --card_btn--  -->
+              <button
+                class="px-[40px] py-[8px] mt-[20px] mb-[25px] lg:mt-[25px] lg:mb-[35px] text-[16px] font-[400] bg-[#394B59] rounded-[11px] text-[#fff]"
+              >
+                Mentorships
+              </button>
+              <p
+                class="text-[18px] md:text-[20px] lg:text-[24px] text-[#394B59] font-[700]"
+              >
+                Lorem ipsum dolor sit amet me consectetur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======== perfect place-2 section End ========= -->
+
+      <!-- ======== Proptech’s biggest  section start ========= -->
+
+      <section class="py-[40px] md:py-[60px] lg:py-[100px]">
+        <div class="container">
+          <h6
+            class="text-[18px] mb-[10px] lg:text-[20px] lg:mb-[12px] font-[500] text-[#394B59]"
+          >
+            The professionals
+          </h6>
+          <h2
+            class="text-[24px] md:text-[34px] lg:text-[40px] mb-[10px] lg:mb-[14px] leading-[1.5] lg:leading-[60px] font-[500] text-[#30404D]"
+          >
+            Proptech’s biggest names
+          </h2>
+
+          <p
+            class="text-[16px] lg:text-[18px] mb-[25px] md:mb-[45px] lg:mb-[75px] max-w-[777px] font-[400] text-[#30404D]"
+          >
+            Is a long established fact that a reader will be distracted by the
+            readable content of a page when looking at its layout.Is a long
+            established fact that a reader will be.
+          </p>
+        </div>
+        <!-- ---slider--wrapper  -->
+        <div
+          class="mb-[30px] lg:mb-[50px] proptech_slider_wrapper owl-carousel"
+        >
+          <!-- ---single-card--  -->
+          <div class="p-[24px] rounded-[25px] bg-[#1D2A34]">
+            <!-- card_thum  -->
+            <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+              <img
+                src="assets/img/icons/image icon.png"
+                class="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+
+            <!-- card_title -->
+            <h6
+              class="text-[18px] md:text-[20px] lg:text-[26px] leading-[30px] mt-[12px] lg:mt-[20px] mb-[12px] font-[700] text-[#fff]"
+            >
+              Jenny Wilson
+            </h6>
+            <!-- card_body -->
+            <div class="text-[14px] md:text-[16px] font-[400] text-[#fff]">
+              It is a long established fact that a reader will be.It is a long
+              esd fact that a reader will be.It is a long
+            </div>
+            <a
+              href="#"
+              class="inline-block mt-[20px] lg:mt-[30px] h-[49px] w-[49px]"
+            >
+              <img
+                src="assets/img/icons/arrow.svg"
+                class="h-[49px] w-[49px]"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- ---single-card--  -->
+          <div class="p-[24px] rounded-[25px] bg-[#1D2A34]">
+            <!-- card_thum  -->
+            <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+              <img
+                src="assets/img/icons/image icon.png"
+                class="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+
+            <!-- card_title -->
+            <h6
+              class="text-[18px] md:text-[20px] lg:text-[26px] leading-[30px] mt-[12px] lg:mt-[20px] mb-[12px] font-[700] text-[#fff]"
+            >
+              Samuel Jones
+            </h6>
+            <!-- card_body -->
+            <div class="text-[14px] md:text-[16px] font-[400] text-[#fff]">
+              It is a long established fact that a reader will be.It is a long
+              esd fact that a reader will be.It is a long
+            </div>
+            <a
+              href="#"
+              class="inline-block mt-[20px] lg:mt-[30px] h-[49px] w-[49px]"
+            >
+              <img
+                src="assets/img/icons/arrow.svg"
+                class="h-[49px] w-[49px]"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- ---single-card--  -->
+          <div class="p-[24px] rounded-[25px] bg-[#1D2A34]">
+            <!-- card_thum  -->
+            <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+              <img
+                src="assets/img/icons/image icon.png"
+                class="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+
+            <!-- card_title -->
+            <h6
+              class="text-[18px] md:text-[20px] lg:text-[26px] leading-[30px] mt-[12px] lg:mt-[20px] mb-[12px] font-[700] text-[#fff]"
+            >
+              Elon Musk
+            </h6>
+            <!-- card_body -->
+            <div class="text-[14px] md:text-[16px] font-[400] text-[#fff]">
+              It is a long established fact that a reader will be.It is a long
+              esd fact that a reader will be.It is a long
+            </div>
+            <a
+              href="#"
+              class="inline-block mt-[20px] lg:mt-[30px] h-[49px] w-[49px]"
+            >
+              <img
+                src="assets/img/icons/arrow.svg"
+                class="h-[49px] w-[49px]"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+        <!-- ---slider--wrapper  -->
+        <div class="proptech_slider_wrapper owl-carousel">
+          <!-- ---single-card--  -->
+          <div class="p-[24px] rounded-[25px] bg-[#1D2A34]">
+            <!-- card_thum  -->
+            <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+              <img
+                src="assets/img/icons/image icon.png"
+                class="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+
+            <!-- card_title -->
+            <h6
+              class="text-[18px] md:text-[20px] lg:text-[26px] leading-[30px] mt-[12px] lg:mt-[20px] mb-[12px] font-[700] text-[#fff]"
+            >
+              Jenny Wilson
+            </h6>
+            <!-- card_body -->
+            <div class="text-[14px] md:text-[16px] font-[400] text-[#fff]">
+              It is a long established fact that a reader will be.It is a long
+              esd fact that a reader will be.It is a long
+            </div>
+            <a
+              href="#"
+              class="inline-block mt-[20px] lg:mt-[30px] h-[49px] w-[49px]"
+            >
+              <img
+                src="assets/img/icons/arrow.svg"
+                class="h-[49px] w-[49px]"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- ---single-card--  -->
+          <div class="p-[24px] rounded-[25px] bg-[#1D2A34]">
+            <!-- card_thum  -->
+            <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+              <img
+                src="assets/img/icons/image icon.png"
+                class="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+
+            <!-- card_title -->
+            <h6
+              class="text-[18px] md:text-[20px] lg:text-[26px] leading-[30px] mt-[12px] lg:mt-[20px] mb-[12px] font-[700] text-[#fff]"
+            >
+              Samuel Jones
+            </h6>
+            <!-- card_body -->
+            <div class="text-[14px] md:text-[16px] font-[400] text-[#fff]">
+              It is a long established fact that a reader will be.It is a long
+              esd fact that a reader will be.It is a long
+            </div>
+            <a
+              href="#"
+              class="inline-block mt-[20px] lg:mt-[30px] h-[49px] w-[49px]"
+            >
+              <img
+                src="assets/img/icons/arrow.svg"
+                class="h-[49px] w-[49px]"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- ---single-card--  -->
+          <div class="p-[24px] rounded-[25px] bg-[#1D2A34]">
+            <!-- card_thum  -->
+            <div class="h-[59px] w-[59px] rounded-full overflow-hidden">
+              <img
+                src="assets/img/icons/image icon.png"
+                class="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+
+            <!-- card_title -->
+            <h6
+              class="text-[18px] md:text-[20px] lg:text-[26px] leading-[30px] mt-[12px] lg:mt-[20px] mb-[12px] font-[700] text-[#fff]"
+            >
+              Elon Musk
+            </h6>
+            <!-- card_body -->
+            <div class="text-[14px] md:text-[16px] font-[400] text-[#fff]">
+              It is a long established fact that a reader will be.It is a long
+              esd fact that a reader will be.It is a long
+            </div>
+            <a
+              href="#"
+              class="inline-block mt-[20px] lg:mt-[30px] h-[49px] w-[49px]"
+            >
+              <img
+                src="assets/img/icons/arrow.svg"
+                class="h-[49px] w-[49px]"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== Proptech’s biggest  section End ========= -->
+
+      <!-- ======== Ready  section start ========= -->
+
+      <section class="py-[40px] md:py-[60px] lg:py-[100px]">
+        <div class="container">
+          <div
+            class="ready_inner px-[10px] md:px-[0] pt-[30px] pb-[40px] md:pt-[50px] md:pb-[60px] lg:pt-[90px] lg:pb-[100px] bg-[#EBF1F5] rounded-[30px]"
+          >
+            <h2
+              class="text-[24px] md:text-[36px] lg:text-[46px] leading-[1.5] lg:leading-[50.6px] text-center mb-[15px] lg:mb-[25px] text-[#394B59] font-[700]"
+            >
+              Ready to be a part of the most <br class="hidden md:block" />
+              valuable proptech group?
+            </h2>
+            <p
+              class="text-[16px] lg:text-[18px] text-[#394B59] text-center font-[400]"
+            >
+              Leave your email to be notified of the launch date
+            </p>
+
+            <!-- --Email_box--  -->
+
+            <div
+              class="mt-[25px] lg:mt-[40px] max-w-[451px] mx-auto flex justify-between border border-[#98A8B3] py-[5px] px-[5px] lg:py-[7px] lg:px-[7px] bg-[#fff] rounded-[29px] overflow-hidden"
+            >
+              <input
+                class="w-[80%] pl-[20px] focus:outline-none"
+                type="email"
+                placeholder="Your email address"
+              />
+              <button
+                class="py-[12px] px-[28px] md:py-[15px] md:px-[35px] text-[14px] font-[600] text-[#fff] bg-[#30404D] flex-shrink-0 rounded-[45px]"
+              >
+                <svg
+                  width="8"
+                  height="14"
+                  viewBox="0 0 8 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_712)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.406222 13.7957C0.689722 14.0687 1.14822 14.0687 1.43102 13.7957L7.42512 8.01091C7.5593 7.8834 7.66614 7.72993 7.73914 7.55983C7.81215 7.38973 7.8498 7.20657 7.8498 7.02146C7.8498 6.83636 7.81215 6.65319 7.73914 6.4831C7.66614 6.313 7.5593 6.15953 7.42512 6.03201L1.38762 0.204512C1.2506 0.0742753 1.06914 0.0010736 0.880106 -0.000226522C0.691069 -0.00152664 0.508623 0.0691723 0.369822 0.197512C0.301062 0.26089 0.246045 0.337709 0.208178 0.423212C0.170311 0.508716 0.1504 0.601082 0.149679 0.694592C0.148957 0.788103 0.167439 0.880766 0.203982 0.966843C0.240524 1.05292 0.294349 1.13058 0.362122 1.19501L5.88792 6.52691C5.95507 6.59067 6.00853 6.66743 6.04507 6.75251C6.0816 6.83759 6.10044 6.92922 6.10044 7.02181C6.10044 7.11441 6.0816 7.20603 6.04507 7.29111C6.00853 7.37619 5.95507 7.45295 5.88792 7.51671L0.406222 12.8066C0.339099 12.8703 0.285646 12.947 0.249118 13.032C0.21259 13.1171 0.193753 13.2086 0.193753 13.3012C0.193753 13.3937 0.21259 13.4853 0.249118 13.5703C0.285646 13.6553 0.339099 13.732 0.406222 13.7957Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_712">
+                      <rect
+                        width="7.7"
+                        height="14"
+                        fill="white"
+                        transform="translate(0.149902)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======== Ready  section End ========= -->
+
+      <!-- ======== community  section start ========= -->
+
+      <section class="my-[40px] md:my-[60px] lg:my-[100px]">
+        <div class="container">
+          <div class="flex flex-wrap">
+            <!-- community left  -->
+            <div class="w-full md:w-1/2">
+              <h2
+                class="text-[24px] lg:text-[34px] leading-[1.5] lg:leading-[37.4px] mb-[30px] lg:mb-[45px] text-[#30404D] font-[700]"
+              >
+                What to expect from the community
+              </h2>
+
+              <!-- ---single-item--  -->
+              <div class="flex gap-[21px] items-center mb-5">
+                <div
+                  class="w-[65px] h-[65px] rounded-full bg-[#fff] shadow-xl flex items-center justify-center"
+                >
+                  <span
+                    class="w-[24px] h-[24px] rounded-full bg-[#8A9BA8] block shadow-xl"
+                  ></span>
+                </div>
+                <div class="">
+                  <h6
+                    class="text-[16px] lg:text-[18px] leading-[21.6px] mb-[11px] text-[#30404D] font-[700]"
+                  >
+                    Mentorships
+                  </h6>
+                  <p
+                    class="max-w-[100%] md:max-w-[232px] text-[16px] text-[#5C7080] font-[400]"
+                  >
+                    It is a long established fact that a reader will be It is a.
+                  </p>
+                </div>
+              </div>
+              <!-- ---single-item--  -->
+              <div class="flex gap-[21px] items-center mb-5">
+                <div
+                  class="w-[65px] h-[65px] rounded-full bg-[#fff] shadow-xl flex items-center justify-center"
+                >
+                  <span
+                    class="w-[24px] h-[24px] rounded-full bg-[#8A9BA8] block shadow-xl"
+                  ></span>
+                </div>
+                <div class="">
+                  <h6
+                    class="text-[16px] lg:text-[18px] leading-[21.6px] mb-[11px] text-[#30404D] font-[700]"
+                  >
+                    Mentorships
+                  </h6>
+                  <p
+                    class="max-w-[100%] md:max-w-[232px] text-[16px] text-[#5C7080] font-[400]"
+                  >
+                    It is a long established fact that a reader will be It is a.
+                  </p>
+                </div>
+              </div>
+              <!-- ---single-item--  -->
+              <div class="flex gap-[21px] items-center">
+                <div
+                  class="w-[65px] h-[65px] rounded-full bg-[#fff] shadow-xl flex items-center justify-center"
+                >
+                  <span
+                    class="w-[24px] h-[24px] rounded-full bg-[#8A9BA8] block shadow-xl"
+                  ></span>
+                </div>
+                <div class="">
+                  <h6
+                    class="text-[16px] lg:text-[18px] leading-[21.6px] mb-[11px] text-[#30404D] font-[700]"
+                  >
+                    Mentorships
+                  </h6>
+                  <p
+                    class="max-w-[100%] md:max-w-[232px] text-[16px] text-[#5C7080] font-[400]"
+                  >
+                    It is a long established fact that a reader will be It is a.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- community right  -->
+            <div
+              class="mt-[70px] md:mt-[0] w-full md:w-1/2 flex justify-between items-center relative"
+            >
+              <img
+                class="absolute top-[-10%] left-0"
+                src="assets/img/bg/top_left_shape.png"
+                alt=""
+              />
+              <img
+                class="absolute bottom-[-10%] right-0"
+                src="assets/img/bg/top_left_shape.png"
+                alt=""
+              />
+
+              <!-- --card--  -->
+              <div
+                class="w-[287px] px-[25px] py-[29px] mx-auto rounded-[20px] bg-[#fff] relative z-[2]"
+              >
+                <div class="flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <div class="">
+                      <img
+                        class="w-[39px] h-[39px] rounded-full"
+                        src="assets/img/icons/image icon.png"
+                        alt=""
+                      />
+                    </div>
+                    <h6
+                      class="text-[16px] leading-[19.2px] text-[#30404D] font-[700]"
+                    >
+                      Find an investor
+                    </h6>
+                  </div>
+                  <span
+                    class="w-[23px] h-[23px] bg-[#5C7080] block rounded-full"
+                  ></span>
+                </div>
+
+                <!-- Ticket size  -->
+                <div
+                  class="px-[14px] py-[19px] my-[22px] rounded-[10px] bg-[#EBF1F5]"
+                >
+                  <div class="flex justify-between">
+                    <p
+                      class="text-[12px] leading-[14.4px] text-[#5C7080] font-[400]"
+                    >
+                      Ticket size
+                    </p>
+                    <p
+                      class="text-[12px] leading-[14.4px] text-[#5C7080] font-[400]"
+                    >
+                      Max
+                    </p>
+                  </div>
+                  <div
+                    class="w-full h-[24px] my-[11px] rounded-[5px] bg-[#fff] overflow-hidden"
+                  >
+                    <span
+                      class="w-[25%] h-full inline-block bg-[#8A9BA8] rounded-[5px]"
+                    ></span>
+                  </div>
+
+                  <div class="flex justify-between">
+                    <p
+                      class="text-[12px] leading-[14.4px] mb-[8px] text-[#5C7080] font-[700]"
+                    >
+                      <$100K
+                    </p>
+                    <p
+                      class="text-[12px] leading-[14.4px] text-[#5C7080] font-[700]"
+                    >
+                      $500M+
+                    </p>
+                  </div>
+
+                  <div class="flex justify-between">
+                    <p
+                      class="text-[12px] leading-[14.4px] text-[#5C7080] font-[400]"
+                    >
+                      Seed/Angel
+                    </p>
+                    <p
+                      class="text-[12px] leading-[14.4px] text-[#5C7080] font-[400]"
+                    >
+                      VC
+                    </p>
+                  </div>
+                </div>
+
+                <!-- ---buttons ---  -->
+
+                <button
+                  class="w-full py-[12px] text-[16px] text-[#fff] font-[400] rounded-[45px] bg-[#30404D]"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  class="w-full py-[12px] mt-[6px] text-[16px] text-[#fff] font-[400] rounded-[45px] bg-[#5C7080]"
+                >
+                  Direct Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======== community  section End ========= -->
+
+      <!-- ======== Scale  section start ========= -->
+
+      <section class="my-[50px] md:my-[100px] my-[150px]">
+        <div class="container">
+          <div class="flex flex-wrap items-center">
+            <!-- --scale_left--  -->
+            <div class="w-full md:w-1/2">
+              <h2
+                class="text-[24px] md:text-[38px] lg:text-[48px] leading-[1.5] lg:leading-[52.4px] mb-[14px] lg:mb-[25px] text-[#30404D] font-[700]"
+              >
+                Scale your <br />
+                proptech product
+              </h2>
+              <p
+                class="max-w-[430px] my-[12px] lg:my-[19px] text-[16px] lg:text-[20px] text-[#8A9BA8] font-[400]"
+              >
+                Is a long established fact that a reader will be distracted by
+                the readable content.
+              </p>
+
+              <!-- --list--  -->
+              <li
+                class="ml-3 list-none text-[16px] lg:text-[20px] text-[#5C7080] font-[400] flex gap-2 items-center"
+              >
+                <div
+                  class="w-[15px] h-[15px] rounded-full bg-[#E8EAEB] shadow-xl flex items-center justify-center"
+                >
+                  <span
+                    class="w-[10px] h-[10px] rounded-full bg-[#8A9BA8] block shadow-xl"
+                  ></span>
+                </div>
+                Is a long established fact
+              </li>
+              <li
+                class="ml-3 list-none text-[16px] lg:text-[20px] text-[#5C7080] font-[400] flex gap-2 items-center"
+              >
+                <div
+                  class="w-[15px] h-[15px] rounded-full bg-[#E8EAEB] shadow-xl flex items-center justify-center"
+                >
+                  <span
+                    class="w-[10px] h-[10px] rounded-full bg-[#8A9BA8] block shadow-xl"
+                  ></span>
+                </div>
+                That a reader will be distracted
+              </li>
+              <li
+                class="ml-3 list-none text-[16px] lg:text-[20px] text-[#5C7080] font-[400] flex gap-2 items-center"
+              >
+                <div
+                  class="w-[15px] h-[15px] rounded-full bg-[#E8EAEB] shadow-xl flex items-center justify-center"
+                >
+                  <span
+                    class="w-[10px] h-[10px] rounded-full bg-[#8A9BA8] block shadow-xl"
+                  ></span>
+                </div>
+                By the readable content.
+              </li>
+
+              <!-- --btns--  -->
+              <button
+                class="px-[24px] py-[12px] mt-[20px] lg:mt-[40px] text-[16px] text-[#fff] font-[400] rounded-[5px] bg-[#5C7080]"
+              >
+                Let me know
+              </button>
+            </div>
+            <!-- --scale_right--  -->
+            <div class="w-full md:w-1/2 mt-[20px] md:mt-[0]">
+              <img src="assets/img/thumbs/scale_thum.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== Scale  section End ========= -->
+
+      <!-- ======== FAQ  section start ========= -->
+
+      <section class="py-[30px] lg:py-[50px]">
+        <div class="container">
+          <div
+            class="faq_inner pt-[30px] pb-[40px] md:pt-[50px] md:pb-[60px] lg:pt-[90px] lg:pb-[100px] bg-[#EBF1F5] rounded-[30px]"
+          >
+            <h2
+              class="px-[16px] md:px-[0] text-[24px] md:text-[36px] lg:text-[46px] leading-[1.5] lg:leading-[50.6px] text-center mb-[40px] md:mb-[60px] lg:mb-[100px] text-[#394B59] font-[700]"
+            >
+              Frequently asked questions
+            </h2>
+
+            <div class="mx-auto w-[90%] lg:w-[80%]">
+              <div class="">
+                <!-- single-faq  -->
+                <div
+                  class="tab w-full overflow-hidden border border-[#C7C7C7] rounded-[10px] bg-[#fff]"
+                >
+                  <input
+                    class="absolute opacity-0"
+                    id="tab-multi-one"
+                    type="checkbox"
+                    name="tabs"
+                  />
+                  <label
+                    class="text-[16px] lg:text-[20px] text-[#30404D] font-[600] block p-[20px] lg:p-[45px] leading-normal cursor-pointer"
+                    for="tab-multi-one"
+                    >What is the time investment required for joining this
+                    forum?</label
+                  >
+                  <div
+                    class="tab-content overflow-hidden border-l-2 border-indigo-500 leading-normal"
+                  >
+                    <p
+                      class="text-[14px] lg:text-[16px] text-[#30404D] font-[400] p-[20px] lg:p-[45px] pt-[0]"
+                    >
+                      2-3 hours distraction-free contribution per month. By
+                      giving more, you receive more.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- single-faq  -->
+                <div
+                  class="mt-[30px] tab w-full overflow-hidden border border-[#C7C7C7] rounded-[10px] bg-[#fff]"
+                >
+                  <input
+                    class="absolute opacity-0"
+                    id="tab-multi-two"
+                    type="checkbox"
+                    name="tabs"
+                  />
+                  <label
+                    class="text-[16px] lg:text-[20px] text-[#30404D] font-[600] block p-[20px] lg:p-[45px] leading-normal cursor-pointer"
+                    for="tab-multi-two"
+                    >How do we account for timezone differences?</label
+                  >
+                  <div
+                    class="tab-content overflow-hidden border-l-2 border-indigo-500 leading-normal"
+                  >
+                    <p
+                      class="text-[14px] lg:text-[16px] text-[#30404D] font-[400] p-[20px] lg:p-[45px] pt-[0]"
+                    >
+                      2-3 hours distraction-free contribution per month. By
+                      giving more, you receive more.
+                    </p>
+                  </div>
+                </div>
+                <!-- single-faq  -->
+                <div
+                  class="mt-[30px] tab w-full overflow-hidden border border-[#C7C7C7] rounded-[10px] bg-[#fff]"
+                >
+                  <input
+                    class="absolute opacity-0"
+                    id="tab-multi-three"
+                    type="checkbox"
+                    name="tabs"
+                  />
+                  <label
+                    class="text-[16px] lg:text-[20px] text-[#30404D] font-[600] block p-[20px] lg:p-[45px] leading-normal cursor-pointer"
+                    for="tab-multi-three"
+                    >When will Leverage launch?</label
+                  >
+                  <div
+                    class="tab-content overflow-hidden border-l-2 border-indigo-500 leading-normal"
+                  >
+                    <p
+                      class="text-[14px] lg:text-[16px] text-[#30404D] font-[400] p-[20px] lg:p-[45px] pt-[0]"
+                    >
+                      2-3 hours distraction-free contribution per month. By
+                      giving more, you receive more.
+                    </p>
+                  </div>
+                </div>
+                <!-- single-faq  -->
+                <div
+                  class="mt-[30px] tab w-full overflow-hidden border border-[#C7C7C7] rounded-[10px] bg-[#fff]"
+                >
+                  <input
+                    class="absolute opacity-0"
+                    id="tab-multi-four"
+                    type="checkbox"
+                    name="tabs"
+                  />
+                  <label
+                    class="text-[16px] lg:text-[20px] text-[#30404D] font-[600] block p-[20px] lg:p-[45px] leading-normal cursor-pointer"
+                    for="tab-multi-four"
+                  >
+                    How are the monthly meetups conducted?</label
+                  >
+                  <div
+                    class="tab-content overflow-hidden border-l-2 border-indigo-500 leading-normal"
+                  >
+                    <p
+                      class="text-[14px] lg:text-[16px] text-[#30404D] font-[400] p-[20px] lg:p-[45px] pt-[0]"
+                    >
+                      2-3 hours distraction-free contribution per month. By
+                      giving more, you receive more.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== FAQ  section End ========= -->
+
+      <!-- ======== represented in Leverage  section start ========= -->
+
+      <section class="py-[40px] md:py-[60px] lg:py-[100px]">
+        <div class="container">
+          <div class="Leverage_inner">
+            <h2
+              class="text-[24px] md:text-[38px] lg:text-[48px] leading-[1.5] lg:leading-[52.6px] text-center mb-[12px] lg:mb-[18px] text-[#394B59] font-[700]"
+            >
+              Which geos are <br />
+              represented in Leverage?
+            </h2>
+            <p
+              class="text-[16px] md:text-[18px] lg:text-[20px] text-[#394B59] leading-[30px] text-center font-[400]"
+            >
+              Is a long established fact that a reader will be distracted by the
+              readable content.
+            </p>
+          </div>
+
+          <div
+            class="mt-[40px] md:mt-[60px] lg:mt-[100px] flex flex-wrap justify-between"
+          >
+            <!-- ----section_left--  -->
+            <div class="mb-[20px] lg:mb-[0] w-[100%] lg:w-[60%]">
+              <img src="assets/img/thumbs/leverage_thum.png" alt="" />
+            </div>
+
+            <!-- ----section_right--  -->
+            <div class="w-[100%] lg:w-[34%]">
+              <!-- ---single-item--  -->
+              <div
+                class="flex items-center gap-2 border-b-[1px] border-[#ECECEC] pb-[16px]"
+              >
+                <div class="w-[50px] h-[50px] rounded-[8px] overflow-hidden">
+                  <img src="assets/img/icons/usa.png" alt="" />
+                </div>
+
+                <div class="">
+                  <h6 class="text-[15.55px] mb-[5px] text-[#0E1D44] font-[600]">
+                    United States
+                  </h6>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[273px] h-[9px] bg-gray-200 rounded-lg overflow-hidden border border-gray-300"
+                    >
+                      <div
+                        class="bg-[#00B397] w-[54%] text-xs leading-none py-1"
+                      ></div>
+                    </div>
+                    <span class="text-[13.33px] font-[600] text-[#0E1D44]"
+                      >54%</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- ---single-item--  -->
+              <div
+                class="flex items-center gap-2 border-b-[1px] border-[#ECECEC] pb-[16px] mt-[15px]"
+              >
+                <div class="w-[50px] h-[50px] rounded-[8px] overflow-hidden">
+                  <img src="assets/img/icons/inda.png" alt="" />
+                </div>
+
+                <div class="">
+                  <h6 class="text-[15.55px] mb-[5px] text-[#0E1D44] font-[600]">
+                    India
+                  </h6>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[273px] h-[9px] bg-gray-200 rounded-lg overflow-hidden border border-gray-300"
+                    >
+                      <div
+                        class="bg-[#6FC66E] w-[34%] text-xs leading-none py-1"
+                      ></div>
+                    </div>
+                    <span class="text-[13.33px] font-[600] text-[#0E1D44]"
+                      >34%</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- ---single-item--  -->
+              <div
+                class="flex items-center gap-2 border-b-[1px] border-[#ECECEC] pb-[16px] mt-[15px]"
+              >
+                <div class="w-[50px] h-[50px] rounded-[8px] overflow-hidden">
+                  <img src="assets/img/icons/russia.png" alt="" />
+                </div>
+
+                <div class="">
+                  <h6 class="text-[15.55px] mb-[5px] text-[#0E1D44] font-[600]">
+                    Russia
+                  </h6>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[273px] h-[9px] bg-gray-200 rounded-lg overflow-hidden border border-gray-300"
+                    >
+                      <div
+                        class="bg-[#F9896B] w-[80%] text-xs leading-none py-1"
+                      ></div>
+                    </div>
+                    <span class="text-[13.33px] font-[600] text-[#0E1D44]"
+                      >80%</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- ---single-item--  -->
+              <div
+                class="flex items-center gap-2 border-b-[1px] border-[#ECECEC] pb-[16px] mt-[15px]"
+              >
+                <div class="w-[50px] h-[50px] rounded-[8px] overflow-hidden">
+                  <img src="assets/img/icons/usa.png" alt="" />
+                </div>
+
+                <div class="">
+                  <h6 class="text-[15.55px] mb-[5px] text-[#0E1D44] font-[600]">
+                    United States
+                  </h6>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[273px] h-[9px] bg-gray-200 rounded-lg overflow-hidden border border-gray-300"
+                    >
+                      <div
+                        class="bg-[#FE9705] w-[45%] text-xs leading-none py-1"
+                      ></div>
+                    </div>
+                    <span class="text-[13.33px] font-[600] text-[#0E1D44]"
+                      >45%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======== represented in Leverage  section End ========= -->
+
+      <!-- ======== joining proptech's   section start ========= -->
+
+      <section>
+        <div class="container">
+          <div
+            class="joining_inner px-[10px] md:px-[0] pt-[36px] lg:pt-[56px] bg-[#EBF1F5] rounded-[30px]"
+          >
+            <div class="mb-[40px] md:mb-[50px] lg:mb-[80px]">
+              <div class="flex gap-[40px] items-center">
+                <!-- left-side  -->
+
+                <div class="w-1/2 hidden md:block">
+                  <div class="">
+                    <img src="assets/img/thumbs/Tab.png" alt="" />
+                  </div>
+                </div>
+
+                <!-- right-side  -->
+
+                <div class="w-full md:w-1/2">
+                  <div class="max-w-[494px] mx-auto md:mr-auto">
+                    <h4
+                      class="text-[20px] lg:text-[24px] leading-[1.5] lg:leading-[28.8px] mb-[16px] lg:mb-[23px] mb-[20px] text-[#30404D] font-[700]"
+                    >
+                      You're joining proptech's high
+                      <br class="hidden lg:block" />
+                      signal global community
+                    </h4>
+                    <p class="text-[16px] mb-[16px] text-[#394B59] font-[400]">
+                      At Leverage, we have designed our community towards
+                      helping build profitable businesses, sharpen our skills
+                      and learn together.
+                    </p>
+                    <button
+                      class="mb-[30px] lg:mb-[0] px-[36px] py-[12px] mt-[6px] text-[16px] text-[#fff] font-[400] rounded-[45px] bg-[#30404D]"
+                    >
+                      Notify me on launch
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== joining proptech's   section End ========= -->
+    </main>
+    <!--======== Main Area End =========-->
+
+    <!-- ======== Footer Start ========= -->
+
+    <footer class="mb-[40px] lg:mb-[70px]">
+      <div class="container px-[14px] lg:px-[60px]">
+        <div class="grid grid-cols-12">
+          <!-- --footer-left--  -->
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-8">
+            <div class="grid grid-cols-8">
+              <div class="col-span-4 md:col-span-4 lg:col-span-2">
+                <h6 class="text-[18px] text-[#394B59] font-[700] mb-[15px]">
+                  Products
+                </h6>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">Customers</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to One</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to Many</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">API Documents</a>
+                </li>
+              </div>
+              <div class="col-span-4 md:col-span-4 lg:col-span-2">
+                <h6 class="text-[18px] text-[#394B59] font-[700] mb-[15px]">
+                  Products
+                </h6>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">Customers</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to One</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to Many</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">API Documents</a>
+                </li>
+              </div>
+              <div
+                class="mt-[22px] lg:mt-[0] col-span-4 md:col-span-4 lg:col-span-2"
+              >
+                <h6 class="text-[18px] text-[#394B59] font-[700] mb-[15px]">
+                  Products
+                </h6>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">Customers</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to One</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to Many</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">API Documents</a>
+                </li>
+              </div>
+              <div
+                class="mt-[22px] lg:mt-[0] col-span-4 md:col-span-4 lg:col-span-2"
+              >
+                <h6 class="text-[18px] text-[#394B59] font-[700] mb-[15px]">
+                  Products
+                </h6>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">Customers</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to One</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">One to Many</a>
+                </li>
+                <li
+                  class="list-none text-[16px] text-[#394B59] font-[400] mb-[14px]"
+                >
+                  <a href="#">API Documents</a>
+                </li>
+              </div>
+            </div>
+          </div>
+          <!-- footer-right--  -->
+
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <img src="assets/img/logos/footer_logo.png" alt="" />
+            <p
+              class="text-[16px] lg:text-[22px] text-[#8A9BA8] font-[400] mt-[11px] mb-[25px]"
+            >
+              It is a long
+              <a href="#" class="text-[#394B59] font-[700]">Established</a> fact
+              that a reader will be
+            </p>
+            <!-- --social-icons--  -->
+            <div class="flex gap-3">
+              <a href="#"
+                ><img src="assets/img/icons/facebook 1.png" alt=""
+              /></a>
+              <a href="#"
+                ><img src="assets/img/icons/linkedin 1.png" alt=""
+              /></a>
+              <a href="#">
+                <img src="assets/img/icons/instagram-alt 1.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ======== Footer End ========= -->
+
+    <!-- js for carousel  -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script>
+      $(".proptech_slider_wrapper").owlCarousel({
+        stagePadding: 80,
+        loop: true,
+        margin: 40,
+        responsive: {
+          0: {
+            items: 1,
+            stagePadding: 20,
+            margin: 20,
+          },
+          600: {
+            items: 2,
+            stagePadding: 40,
+            margin: 25,
+          },
+          768: {
+            stagePadding: 60,
+            items: 2,
+            margin: 30,
+          },
+          1000: {
+            stagePadding: 80,
+            items: 3,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
